@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Imperial Games | Catálogo</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#090711;color:white;font-family:Arial,sans-serif}
+header{text-align:center;padding:35px 15px;background:linear-gradient(140deg,#170d2d,#090711);border-bottom:2px solid #9b55ff}
+.logo{font-size:30px;font-weight:900;color:#d3a5ff}
+header p{color:#c6b7d9}
+h2{text-align:center;color:#d3a5ff}
+.container{max-width:950px;margin:auto;padding:18px}
+input,select{width:100%;padding:14px;margin:7px 0;background:#191425;color:white;border:1px solid #7145a6;border-radius:9px;font-size:16px}
+.card{background:#171222;border:1px solid #7043a2;border-radius:14px;margin:20px 0;overflow:hidden}
+.photo{height:155px;background:radial-gradient(circle,#7535a8,#170d2d 65%,#080610);display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:bold;color:#e3c5ff}
+.info{padding:17px}
+.info h3{color:#d3a5ff;font-size:23px;margin:0 0 12px}
+.info p{color:#ddd;line-height:1.6}
+.price{font-size:22px;color:#65f0a0;font-weight:bold}
+.btn{display:block;text-align:center;padding:14px;background:#792ed0;color:white;text-decoration:none;border-radius:9px;font-weight:bold;margin-top:15px}
+footer{text-align:center;padding:25px;color:#aaa}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">👑 IMPERIAL GAMES</div>
+<p>CATÁLOGO EXCLUSIVO • LORDS MOBILE</p>
+</header>
+
+<div class="container">
+<h2>🔥 CASTELOS DISPONÍVEIS 🔥</h2>
+
+<input id="busca" placeholder="🔎 Pesquisar castelo ou bônus..." oninput="filtrar()">
+
+<select id="filtro" onchange="filtrar()">
+<option value="">Todas as categorias</option>
+<option value="Titan">Titan</option>
+<option value="Champ">Champ</option>
+<option value="Full Champ">Full Champ</option>
+<option value="Skin Líder">Skin Líder</option>
+</select>
+
+<div id="catalogo"></div>
+</div>
+
+<footer>
+<strong>IMPERIAL GAMES 👑</strong>
+<p>Compra, venda e negociação de castelos</p>
+<p>Atendimento seguro e personalizado</p>
+</footer>
+
+<script>
+const whatsapp = "5537991934958";
+
+const castelos = [
+{
+nome:"Titan 05 Champ",
+categoria:"Titan",
+bonus:"1032% • 1010% • 1042%",
+detalhes:"05 peças Champs 🧡<br>03 taças míticas 🧡<br>Heróis pagos lendários 💛<br>50 estrelas de castelos ⭐<br>Familiares pagos nível 10",
+preco:"R$ 4.950",
+entrada:"Entrada de R$ 600",
+foto:""
+}
+];
+
+function mostrar(lista){
+document.getElementById("catalogo").innerHTML=lista.map(c=>`
+<div class="card">
+<div class="photo">${c.foto ? `<img src="${c.foto}" style="width:100%;height:100%;object-fit:cover">` : "👑 IMPERIAL GAMES"}</div>
+<div class="info">
+<h3>${c.nome}</h3>
+<p><b>Bônus:</b> ${c.bonus}</p>
+<p>${c.detalhes}</p>
+<div class="price">${c.preco}</div>
+<p>${c.entrada}</p>
+<a class="btn" target="_blank" href="https://wa.me/${whatsapp}?text=${encodeURIComponent("Olá! Tenho interesse no castelo "+c.nome)}">CHAMAR NO WHATSAPP</a>
+</div>
+</div>`).join("");
+}
+
+function filtrar(){
+const busca=document.getElementById("busca").value.toLowerCase();
+const categoria=document.getElementById("filtro").value;
+mostrar(castelos.filter(c=>
+(c.nome+" "+c.bonus+" "+c.categoria).toLowerCase().includes(busca)
+&& (!categoria || c.categoria===categoria)
+));
+}
+mostrar(castelos);
+</script>
+</body>
+</html>
