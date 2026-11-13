@@ -103,7 +103,7 @@ font-weight:bold
 .photo img{
 width:100%;
 height:100%;
-object-fit:cover
+object-fit:contain;
 }
 .info{padding:17px}
 .info h3{color:#e8c66c}
@@ -284,7 +284,7 @@ ${c.foto
 <p>${c.categoria}</p>
 <p>${c.bonus}</p>
 <p>${c.tropas}</p>
-<p>${c.descricao}</p>
+<p>${c.descricao.replace(/\n/g,"<br>")}</p>
 
 <div class="price">${c.preco}</div>
 
