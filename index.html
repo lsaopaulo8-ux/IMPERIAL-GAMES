@@ -1,95 +1,334 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Imperial Games | Catálogo</title>
+<title>Imperial Games | Catálogo Oficial</title>
+
 <style>
 *{box-sizing:border-box}
-body{margin:0;background:#090711;color:white;font-family:Arial,sans-serif}
-header{text-align:center;padding:35px 15px;background:linear-gradient(140deg,#170d2d,#090711);border-bottom:2px solid #9b55ff}
-.logo{font-size:30px;font-weight:900;color:#d3a5ff}
-header p{color:#c6b7d9}
-h2{text-align:center;color:#d3a5ff}
-.container{max-width:950px;margin:auto;padding:18px}
-input,select{width:100%;padding:14px;margin:7px 0;background:#191425;color:white;border:1px solid #7145a6;border-radius:9px;font-size:16px}
-.card{background:#171222;border:1px solid #7043a2;border-radius:14px;margin:20px 0;overflow:hidden}
-.photo{height:155px;background:radial-gradient(circle,#7535a8,#170d2d 65%,#080610);display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:bold;color:#e3c5ff}
+body{
+margin:0;
+background:#09070e;
+color:white;
+font-family:Arial,sans-serif
+}
+header{
+text-align:center;
+padding:35px 15px;
+background:linear-gradient(135deg,#190b30,#08070c);
+border-bottom:2px solid #d4ad48
+}
+.logo{
+font-size:32px;
+font-weight:900;
+color:#e8c66c
+}
+header p{color:#cbbbdc}
+nav{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+padding:18px;
+background:#130d20
+}
+nav a{
+color:#e8c66c;
+text-decoration:none;
+font-weight:bold
+}
+.hero{
+text-align:center;
+padding:55px 20px;
+background:radial-gradient(circle,#40205f,#09070e 75%)
+}
+.hero h1{color:#f1d47b;font-size:32px}
+.hero p{color:#ddd;line-height:1.7}
+.btn{
+display:inline-block;
+background:linear-gradient(90deg,#a77b27,#f1d47b);
+color:#160e08;
+padding:14px 22px;
+border-radius:9px;
+text-decoration:none;
+font-weight:bold;
+margin:8px
+}
+.container{
+max-width:1000px;
+margin:auto;
+padding:25px 16px
+}
+h2{
+text-align:center;
+color:#e8c66c;
+margin:35px 0 22px
+}
+.filtros{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px
+}
+input,select{
+width:100%;
+padding:14px;
+border-radius:8px;
+border:1px solid #684a8c;
+background:#171020;
+color:white
+}
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:18px
+}
+.card{
+background:#171020;
+border:1px solid #72552c;
+border-radius:13px;
+overflow:hidden
+}
+.photo{
+height:175px;
+background:linear-gradient(135deg,#382052,#100c18);
+display:flex;
+align-items:center;
+justify-content:center;
+color:#e8c66c;
+font-size:24px;
+font-weight:bold
+}
+.photo img{
+width:100%;
+height:100%;
+object-fit:cover
+}
 .info{padding:17px}
-.info h3{color:#d3a5ff;font-size:23px;margin:0 0 12px}
+.info h3{color:#e8c66c}
 .info p{color:#ddd;line-height:1.6}
-.price{font-size:22px;color:#65f0a0;font-weight:bold}
-.btn{display:block;text-align:center;padding:14px;background:#792ed0;color:white;text-decoration:none;border-radius:9px;font-weight:bold;margin-top:15px}
-footer{text-align:center;padding:25px;color:#aaa}
+.price{
+font-size:23px;
+color:#f1d47b;
+font-weight:bold
+}
+.contact{
+display:block;
+text-align:center;
+background:#218c48;
+color:white;
+padding:13px;
+border-radius:8px;
+text-decoration:none;
+font-weight:bold;
+margin-top:15px
+}
+.benefits{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:12px
+}
+.benefit{
+background:#171020;
+border:1px solid #684a8c;
+padding:20px;
+text-align:center;
+border-radius:10px;
+color:#e8c66c
+}
+footer{
+text-align:center;
+padding:30px;
+background:#120d1c;
+color:#bbb;
+margin-top:30px
+}
+@media(max-width:500px){
+.filtros{grid-template-columns:1fr}
+.hero h1{font-size:26px}
+}
 </style>
 </head>
+
 <body>
+
 <header>
 <div class="logo">👑 IMPERIAL GAMES</div>
-<p>CATÁLOGO EXCLUSIVO • LORDS MOBILE</p>
+<p>O SEU IMPÉRIO COMEÇA AQUI!</p>
+<p>LORDS MOBILE • COMPRA • VENDA • NEGOCIAÇÃO</p>
 </header>
 
-<div class="container">
-<h2>🔥 CASTELOS DISPONÍVEIS 🔥</h2>
+<nav>
+<a href="#inicio">INÍCIO</a>
+<a href="#catalogo">CATÁLOGO</a>
+<a href="#vantagens">VANTAGENS</a>
+<a href="#contato">CONTATO</a>
+</nav>
 
-<input id="busca" placeholder="🔎 Pesquisar castelo ou bônus..." oninput="filtrar()">
+<section class="hero" id="inicio">
+<h1>🔥 SEU PRÓXIMO CASTELO ESTÁ AQUI!</h1>
+<p>
+Encontre castelos e contas de Lords Mobile.<br>
+Qualidade, negociação e atendimento especializado.
+</p>
+<a class="btn" href="#catalogo">VER CATÁLOGO</a>
+<a class="btn" href="#contato">FALAR COM ATENDENTE</a>
+</section>
 
-<select id="filtro" onchange="filtrar()">
+<main class="container">
+
+<h2 id="catalogo">👑 CASTELOS E CONTAS DISPONÍVEIS</h2>
+
+<div class="filtros">
+<input id="busca" placeholder="🔎 Pesquisar castelo ou bônus">
+<select id="categoria">
 <option value="">Todas as categorias</option>
-<option value="Titan">Titan</option>
-<option value="Champ">Champ</option>
-<option value="Full Champ">Full Champ</option>
-<option value="Skin Líder">Skin Líder</option>
+<option value="Castelo">Castelos</option>
+<option value="Conta">Contas</option>
+<option value="Guilda">Guildas</option>
 </select>
-
-<div id="catalogo"></div>
 </div>
 
+<div class="grid" id="produtos"></div>
+
+<h2 id="vantagens">🏆 POR QUE ESCOLHER A IMPERIAL?</h2>
+
+<div class="benefits">
+<div class="benefit">🔒 Atendimento seguro</div>
+<div class="benefit">👑 Diversas opções</div>
+<div class="benefit">💎 Ótimas negociações</div>
+<div class="benefit">🚀 Atendimento personalizado</div>
+</div>
+
+<section id="contato">
+<h2>📲 FALE COM A IMPERIAL GAMES</h2>
+<p style="text-align:center;color:#ddd">
+Gostou de algum castelo? Entre em contato e faça sua proposta!
+</p>
+<div style="text-align:center">
+<a class="btn" style="background:#218c48;color:white"
+id="whatsapp" href="#">
+CHAMAR NO WHATSAPP
+</a>
+</div>
+</section>
+
+</main>
+
 <footer>
-<strong>IMPERIAL GAMES 👑</strong>
-<p>Compra, venda e negociação de castelos</p>
-<p>Atendimento seguro e personalizado</p>
+<strong style="color:#e8c66c">👑 IMPERIAL GAMES</strong>
+<p>Seu parceiro no universo Lords Mobile.</p>
+<p>© 2026 Imperial Games</p>
 </footer>
 
 <script>
-const whatsapp = "5537991934958";
 
+// COLOQUE SEU WHATSAPP COM DDD
+// Exemplo: 5537999999999
+const telefone = "55DDDNUMERO";
+
+// CADASTRO DOS CASTELOS
 const castelos = [
+
 {
-nome:"Titan 05 Champ",
-categoria:"Titan",
-bonus:"1032% • 1010% • 1042%",
-detalhes:"05 peças Champs 🧡<br>03 taças míticas 🧡<br>Heróis pagos lendários 💛<br>50 estrelas de castelos ⭐<br>Familiares pagos nível 10",
-preco:"R$ 4.950",
-entrada:"Entrada de R$ 600",
-foto:""
+nome:"CASTELO EXEMPLO 01",
+categoria:"Castelo",
+bonus:"Bônus: inserir porcentagem",
+tropas:"Tropas: inserir quantidade",
+preco:"CONSULTAR PREÇO",
+foto:"",
+descricao:"Adicione aqui os detalhes do castelo."
+},
+
+{
+nome:"CONTA EXEMPLO 02",
+categoria:"Conta",
+bonus:"Bônus: inserir porcentagem",
+tropas:"Tropas: inserir quantidade",
+preco:"CONSULTAR PREÇO",
+foto:"",
+descricao:"Adicione aqui os detalhes da conta."
+},
+
+{
+nome:"GUILDA EXEMPLO 03",
+categoria:"Guilda",
+bonus:"Informações da guilda",
+tropas:"Informar detalhes",
+preco:"CONSULTAR PREÇO",
+foto:"",
+descricao:"Adicione aqui os detalhes da guilda."
 }
+
 ];
 
 function mostrar(lista){
-document.getElementById("catalogo").innerHTML=lista.map(c=>`
+
+const produtos=document.getElementById("produtos");
+
+produtos.innerHTML=lista.map(c=>`
+
 <div class="card">
-<div class="photo">${c.foto ? `<img src="${c.foto}" style="width:100%;height:100%;object-fit:cover">` : "👑 IMPERIAL GAMES"}</div>
-<div class="info">
-<h3>${c.nome}</h3>
-<p><b>Bônus:</b> ${c.bonus}</p>
-<p>${c.detalhes}</p>
-<div class="price">${c.preco}</div>
-<p>${c.entrada}</p>
-<a class="btn" target="_blank" href="https://wa.me/${whatsapp}?text=${encodeURIComponent("Olá! Tenho interesse no castelo "+c.nome)}">CHAMAR NO WHATSAPP</a>
+
+<div class="photo">
+${c.foto
+? `<img src="${c.foto}" alt="Foto do castelo">`
+: "👑 IMPERIAL GAMES"}
 </div>
-</div>`).join("");
+
+<div class="info">
+
+<h3>${c.nome}</h3>
+<p>${c.categoria}</p>
+<p>${c.bonus}</p>
+<p>${c.tropas}</p>
+<p>${c.descricao}</p>
+
+<div class="price">${c.preco}</div>
+
+<a class="contact" target="_blank"
+href="https://wa.me/${telefone}?text=${encodeURIComponent("Olá! Tenho interesse em "+c.nome)}">
+TENHO INTERESSE
+</a>
+
+</div>
+</div>
+
+`).join("");
+
 }
 
 function filtrar(){
+
 const busca=document.getElementById("busca").value.toLowerCase();
-const categoria=document.getElementById("filtro").value;
+
+const categoria=document.getElementById("categoria").value;
+
 mostrar(castelos.filter(c=>
-(c.nome+" "+c.bonus+" "+c.categoria).toLowerCase().includes(busca)
+
+(c.nome+" "+c.bonus+" "+c.categoria)
+.toLowerCase().includes(busca)
+
 && (!categoria || c.categoria===categoria)
+
 ));
+
 }
+
+document.getElementById("busca")
+.addEventListener("input",filtrar);
+
+document.getElementById("categoria")
+.addEventListener("change",filtrar);
+
+document.getElementById("whatsapp").href=
+"https://wa.me/"+telefone+
+"?text="+encodeURIComponent("Olá! Vim pelo site da Imperial Games!");
+
 mostrar(castelos);
+
 </script>
+
 </body>
 </html>
